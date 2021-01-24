@@ -15,9 +15,14 @@ background = pygame.image.load("background/tree.jpg")
 #
 running = True
 while running:
+
+    screen.blit(background, (0, 0))
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         else:
             print(event)
+    
+    pygame.display.update()
 
