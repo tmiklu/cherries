@@ -1,1 +1,2 @@
-# cherries
+# cherries 
+python game with pygame
