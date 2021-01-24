@@ -5,6 +5,9 @@ pygame.init()
 # create new window for graphics
 screen = pygame.display.set_mode((800, 600))
 
+# images
+background = pygame.image.load("background/tree.jpg")
+
 #
 ##
 ### Game loop
