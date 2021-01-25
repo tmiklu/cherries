@@ -49,9 +49,14 @@ while running:
                 print('key was released')
                 # if key is release, stop moving (0)
                 bucket_x_change = 0
+
     
     # game border
-
+    if bucket_x <= 0:
+        bucket_x = 0
+    if bucket_x >= 736:
+        bucket_x = 736
+    
     bucket_x += bucket_x_change
     bucket(bucket_x, bucket_y)
     pygame.display.update()
