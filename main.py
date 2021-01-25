@@ -8,6 +8,11 @@ screen = pygame.display.set_mode((800, 600))
 # images
 background = pygame.image.load("background/tree.jpg")
 
+# bucket
+bucket = pygame.image.load("bucket/bucket.png")
+bucketx = 399
+buckety = 600
+
 #
 ##
 ### Game loop
