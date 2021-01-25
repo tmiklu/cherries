@@ -5,6 +5,13 @@ pygame.init()
 # create new window for graphics
 screen = pygame.display.set_mode((800, 600))
 
+# load custom icons
+icon = pygame.image.load('icon/cherries.png')
+pygame.display.set_icon(icon)
+
+# custom window title
+pygame.display.set_caption('Cherries')
+
 # images
 background = pygame.image.load("background/tree.jpg")
 
@@ -13,6 +20,12 @@ bucket_img = pygame.image.load("bucket/bucket.png")
 bucket_x = 380
 bucket_y = 538
 bucket_x_change = 0
+
+# cherry
+cherry_img = pygame.image.load("cherry/cherry.png")
+cherry_x = 380
+cherry_y = 200
+cherry_x_change = 0
 
 #
 ##
