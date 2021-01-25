@@ -24,6 +24,10 @@ background = pygame.image.load("background/tree.jpg")
 score = 0
 myfont = pygame.font.SysFont("comicsansms", 17)
 
+# game over
+game_over_string = "Game over!"
+game_over = pygame.font.SysFont("comicsansms", 25)
+
 # bucket
 bucket_img = pygame.image.load("bucket/bucket.png")
 bucket_x = 380
@@ -113,6 +117,12 @@ while running:
     # score
     scoretext = myfont.render("Score {0}".format(score), 1, (0,0,0))
     screen.blit(scoretext, (7, 10))
+
+    # game over
+    if cherry_y >= 600:
+        cherry_y_change = 0
+        game_over_text = game_over.render(game_over_string, 1, (0,0,0))
+        screen.blit(game_over_text, (180, 450))
 
 
     cherry(cherry_x, cherry_y)
