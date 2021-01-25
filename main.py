@@ -41,6 +41,9 @@ while running:
             if event.key == pygame.K_RIGHT:
                 print("right arrow was pressed")
                 pass
+            if event.key == pygame.K_LEFT:
+                print("left arrow was pressed")
+                pass
     
     bucket(bucket_x, bucket_y)
     pygame.display.update()
