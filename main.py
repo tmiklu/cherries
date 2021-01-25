@@ -1,4 +1,5 @@
 import pygame, sys # import modules
+import math
 import random
 
 pygame.init()
@@ -15,6 +16,9 @@ pygame.display.set_caption('Cherries')
 
 # images
 background = pygame.image.load("background/tree.jpg")
+
+# score
+score = 0
 
 # bucket
 bucket_img = pygame.image.load("bucket/bucket.png")
@@ -42,6 +46,13 @@ def bucket(x, y):
 def cherry(x, y):
     screen.blit(cherry_img, (x, y))
 
+def isCollision(bucket_x, bucket_y, cherry_x, cherry_y):
+    distance = math.sqrt(math.pow(cherry_x - bucket_x, 2) + (math.pow(cherry_y - bucket_y, 2)))
+    if distance < 10:
+        return True
+    else:
+        return False
+
 #
 ##
 ### Game loop
@@ -60,10 +71,10 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 print("right arrow was pressed")
-                bucket_x_change += 0.3
+                bucket_x_change += 0.5
             if event.key == pygame.K_LEFT:
                 print("left arrow was pressed")
-                bucket_x_change -= 0.3
+                bucket_x_change -= 0.5
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
                 print('key was released')
@@ -84,6 +95,15 @@ while running:
     cherry_y += cherry_y_change
     if cherry_y >= 601:
         cherry_y_change = 0
+    
+    # Collision
+    collision = isCollision(bucket_x, bucket_y, cherry_x, cherry_y)
+    if collision:
+        score += 1
+        print(score)
+        cherry_x = random.randint(87, 737)
+        cherry_y = random.randint(166, 314) 
+
 
     cherry(cherry_x, cherry_y)
     bucket(bucket_x, bucket_y)
