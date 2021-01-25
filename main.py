@@ -4,7 +4,8 @@ import random
 
 pygame.init()
 
-print(pygame.font.get_fonts())
+# write fonts
+#print(pygame.font.get_fonts())
 
 # create new window for graphics
 screen = pygame.display.set_mode((800, 600))
