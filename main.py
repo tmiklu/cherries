@@ -10,7 +10,7 @@ background = pygame.image.load("background/tree.jpg")
 
 # bucket
 bucket_img = pygame.image.load("bucket/bucket.png")
-bucket_x = 399
+bucket_x = 380
 bucket_y = 538
 
 
