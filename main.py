@@ -1,4 +1,5 @@
 import pygame, sys # import modules
+import random
 
 pygame.init()
 
@@ -23,9 +24,12 @@ bucket_x_change = 0
 
 # cherry
 cherry_img = pygame.image.load("cherry/cherry.png")
-cherry_x = 380
-cherry_y = 200
+cherry_x = random.randint(87, 737)
+cherry_y = random.randint(166, 314) #200
 cherry_y_change = 0.2
+
+print(cherry_y)
+print(cherry_x)
 
 #
 ##
