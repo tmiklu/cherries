@@ -52,7 +52,7 @@ def cherry(x, y):
 
 def isCollision(bucket_x, bucket_y, cherry_x, cherry_y):
     distance = math.sqrt(math.pow(cherry_x - bucket_x, 2) + (math.pow(cherry_y - bucket_y, 2)))
-    # distance between cherry and bucket
+    # distance between cherry and bucket, value of distance 21.91551961511318
     if distance < 22:
         return True
     else:
