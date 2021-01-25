@@ -25,7 +25,7 @@ bucket_x_change = 0
 cherry_img = pygame.image.load("cherry/cherry.png")
 cherry_x = 380
 cherry_y = 200
-cherry_x_change = 0
+cherry_y_change = 0.2
 
 #
 ##
@@ -76,6 +76,12 @@ while running:
     # movement of bucket
     bucket_x += bucket_x_change
 
+    # movement of cherry
+    cherry_y += cherry_y_change
+    if cherry_y >= 601:
+        cherry_y_change = 0
+
+    cherry(cherry_x, cherry_y)
     bucket(bucket_x, bucket_y)
 
     pygame.display.update()
