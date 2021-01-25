@@ -4,6 +4,8 @@ import random
 
 pygame.init()
 
+print(pygame.font.get_fonts())
+
 # create new window for graphics
 screen = pygame.display.set_mode((800, 600))
 
@@ -19,6 +21,7 @@ background = pygame.image.load("background/tree.jpg")
 
 # score
 score = 0
+myfont = pygame.font.SysFont("comicsansms", 17)
 
 # bucket
 bucket_img = pygame.image.load("bucket/bucket.png")
@@ -102,7 +105,12 @@ while running:
         score += 1
         print(score)
         cherry_x = random.randint(87, 737)
-        cherry_y = random.randint(166, 314) 
+        cherry_y = random.randint(166, 314)
+    
+
+    # score
+    scoretext = myfont.render("Score {0}".format(score), 1, (0,0,0))
+    screen.blit(scoretext, (7, 10))
 
 
     cherry(cherry_x, cherry_y)
