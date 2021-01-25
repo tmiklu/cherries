@@ -37,6 +37,10 @@ while running:
             running = False
         else:
             print(event)
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                print("right arrow was pressed")
+                pass
     
     bucket(bucket_x, bucket_y)
     pygame.display.update()
