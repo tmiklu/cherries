@@ -9,9 +9,18 @@ screen = pygame.display.set_mode((800, 600))
 background = pygame.image.load("background/tree.jpg")
 
 # bucket
-bucket = pygame.image.load("bucket/bucket.png")
-bucketx = 399
-buckety = 600
+bucket_img = pygame.image.load("bucket/bucket.png")
+bucket_x = 399
+bucket_y = 538
+
+
+#
+##
+### functions
+##
+#
+def bucket(x, y):
+    screen.blit(bucket_img, (x, y))
 
 #
 ##
@@ -29,5 +38,6 @@ while running:
         else:
             print(event)
     
+    bucket(bucket_x, bucket_y)
     pygame.display.update()
 
