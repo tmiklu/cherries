@@ -35,6 +35,9 @@ cherry_x_change = 0
 def bucket(x, y):
     screen.blit(bucket_img, (x, y))
 
+def cherry(x, y):
+    screen.blit(cherry_img, (x, y))
+
 #
 ##
 ### Game loop
@@ -70,7 +73,10 @@ while running:
     if bucket_x >= 736:
         bucket_x = 736
     
+    # movement of bucket
     bucket_x += bucket_x_change
+
     bucket(bucket_x, bucket_y)
+
     pygame.display.update()
 
