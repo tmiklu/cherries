@@ -40,7 +40,7 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 print("right arrow was pressed")
-                pass
+                bucket_x += 10
             if event.key == pygame.K_LEFT:
                 print("left arrow was pressed")
                 pass
