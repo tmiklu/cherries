@@ -12,7 +12,7 @@ background = pygame.image.load("background/tree.jpg")
 bucket_img = pygame.image.load("bucket/bucket.png")
 bucket_x = 380
 bucket_y = 538
-
+bucket_x_change = 0
 
 #
 ##
@@ -40,16 +40,19 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 print("right arrow was pressed")
-                bucket_x += 10
+                bucket_x_change += 0.3
             if event.key == pygame.K_LEFT:
                 print("left arrow was pressed")
-                bucket_x -= 10
+                bucket_x_change -= 0.3
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
-                pass
+                print('key was released')
+                # if key is release, stop moving (0)
+                bucket_x_change = 0
     
-    
-    
+    # game border
+
+    bucket_x += bucket_x_change
     bucket(bucket_x, bucket_y)
     pygame.display.update()
 
