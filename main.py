@@ -43,6 +43,12 @@ cherry_y_change = 0.2
 print(cherry_y)
 print(cherry_x)
 
+# cherry bunus
+cherry_bonus_img = pygame.image.load("cherry/cherry_bonus.png")
+cherry_bonus_x = random.randint(87, 737)
+cherry_bonus_y = random.randint(166, 314) #200
+cherry_bonus_y_change = 0.2
+
 #
 ##
 ### functions
@@ -53,6 +59,9 @@ def bucket(x, y):
 
 def cherry(x, y):
     screen.blit(cherry_img, (x, y))
+
+def cherry_bunus(x, y):
+    screen.blit(cherry_bonus_img, (x, y))
 
 def isCollision(bucket_x, bucket_y, cherry_x, cherry_y):
     distance = math.sqrt(math.pow(cherry_x - bucket_x, 2) + (math.pow(cherry_y - bucket_y, 2)))
