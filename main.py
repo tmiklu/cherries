@@ -1,6 +1,7 @@
 import pygame, sys # import modules
 import math
 import random
+import time
 
 pygame.init()
 
@@ -43,11 +44,11 @@ cherry_y_change = 0.2
 print(cherry_y)
 print(cherry_x)
 
-# cherry bunus
+# cherry bonus
 cherry_bonus_img = pygame.image.load("cherry/cherry_bonus.png")
 cherry_bonus_x = random.randint(87, 737)
 cherry_bonus_y = random.randint(166, 314) #200
-cherry_bonus_y_change = 0.2
+cherry_bonus_y_change = 0.1
 
 
 #
@@ -61,7 +62,7 @@ def bucket(x, y):
 def cherry(x, y):
     screen.blit(cherry_img, (x, y))
 
-def cherry_bunus(x, y):
+def cherry_bonus(x, y):
     screen.blit(cherry_bonus_img, (x, y))
 
 def cherry_collision(bucket_x, bucket_y, cherry_x, cherry_y):
@@ -90,22 +91,21 @@ running = True
 while running:
 
     screen.blit(background, (0, 0))
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        else:
-            print(event)
+        #else:
+        #    print(event)
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                print("right arrow was pressed")
+                #print("right arrow was pressed")
                 bucket_x_change += 0.5
             if event.key == pygame.K_LEFT:
-                print("left arrow was pressed")
+                #print("left arrow was pressed")
                 bucket_x_change -= 0.5
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
-                print('key was released')
+                #print('key was released')
                 # if key is release, stop moving (0)
                 bucket_x_change = 0
 
@@ -127,6 +127,7 @@ while running:
     # movement of cherry cherry_bonus
     cherry_bonus_y += cherry_bonus_y_change
     if cherry_bonus_y >= 601:
+        #pass
         cherry_bonus_y = 0
     
     # Collision
@@ -136,8 +137,8 @@ while running:
         print(score)
         cherry_x = random.randint(87, 737)
         cherry_y = random.randint(166, 314)
+
     
-    # Colision cherry cherry_bonus
     collision_cherry_bonus = cherry_bonus_collision(bucket_x, bucket_y, cherry_bonus_x, cherry_bonus_y)
     if collision_cherry_bonus:
         score += 3
@@ -159,8 +160,8 @@ while running:
 
 
     cherry(cherry_x, cherry_y)
-    cherry_bunus(cherry_bonus_x, cherry_bonus_y)
     bucket(bucket_x, bucket_y)
-
+    cherry_bonus(cherry_bonus_x, cherry_bonus_y)
     pygame.display.update()
+    
 
