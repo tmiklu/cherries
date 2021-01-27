@@ -120,12 +120,15 @@ while running:
         cherry_bonus_y = 0
     
     # Collision
-    collision = isCollision(bucket_x, bucket_y, cherry_x, cherry_y)
-    if collision:
+    collision_cherry = isCollision(bucket_x, bucket_y, cherry_x, cherry_y)
+    if collision_cherry:
         score += 1
         print(score)
         cherry_x = random.randint(87, 737)
         cherry_y = random.randint(166, 314)
+    
+    # Colision cherry cherry_bonus
+    
     
 
     # score
