@@ -114,6 +114,11 @@ while running:
     if cherry_y >= 601:
         cherry_y_change = 0
     
+    # movement of cherry cherry_bonus
+    cherry_bonus_y += cherry_bonus_y_change
+    if cherry_bonus_y >= 601:
+        cherry_bonus_y = 0
+    
     # Collision
     collision = isCollision(bucket_x, bucket_y, cherry_x, cherry_y)
     if collision:
@@ -135,6 +140,7 @@ while running:
 
 
     cherry(cherry_x, cherry_y)
+    cherry_bunus(cherry_bonus_x, cherry_bonus_y)
     bucket(bucket_x, bucket_y)
 
     pygame.display.update()
