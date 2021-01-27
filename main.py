@@ -142,8 +142,8 @@ while running:
     if collision_cherry_bonus:
         score += 3
         print(score)
-        cherry_bonus_x = random.randint(87, 737)
-        cherry_bonus_y = random.randint(166, 314)
+        cherry_bonus_x = random.randint(87, 600)
+        cherry_bonus_y = random.randint(230, 314)
     
     # score
     scoretext = myfont.render("Score {0}".format(score), 1, (0,0,0))
@@ -154,7 +154,7 @@ while running:
         cherry_y_change = 0
         game_over_text = game_over.render(game_over_string, 1, (0,0,0))
         screen.blit(game_over_text, (180, 450))
-        cherry_bonus_x = 840
+        cherry_bonus_x = 801
         cherry_bonus_y = 601
 
 
