@@ -49,6 +49,7 @@ cherry_bonus_x = random.randint(87, 737)
 cherry_bonus_y = random.randint(166, 314) #200
 cherry_bonus_y_change = 0.2
 
+
 #
 ##
 ### functions
@@ -153,6 +154,8 @@ while running:
         cherry_y_change = 0
         game_over_text = game_over.render(game_over_string, 1, (0,0,0))
         screen.blit(game_over_text, (180, 450))
+        cherry_bonus_x = 840
+        cherry_bonus_y = 601
 
 
     cherry(cherry_x, cherry_y)
