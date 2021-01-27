@@ -66,7 +66,15 @@ def cherry_bunus(x, y):
 def cherry_collision(bucket_x, bucket_y, cherry_x, cherry_y):
     distance = math.sqrt(math.pow(cherry_x - bucket_x, 2) + (math.pow(cherry_y - bucket_y, 2)))
     # distance between cherry and bucket, value of distance 21.91551961511318
-    if distance < 22:
+    if distance < 20:
+        return True
+    else:
+        return False
+
+def cherry_bonus_collision(bucket_x, bucket_y, cherry_bonus_x, cherry_bonus_y):
+    distance = math.sqrt(math.pow(cherry_bonus_x - bucket_x, 2) + (math.pow(cherry_bonus_y - bucket_y, 2)))
+    # distance between cherry and bucket, value of distance 21.91551961511318
+    if distance < 20:
         return True
     else:
         return False
@@ -129,12 +137,12 @@ while running:
         cherry_y = random.randint(166, 314)
     
     # Colision cherry cherry_bonus
-    collision_cherry_bonus = isCollision(bucket_x, bucket_y, cherry_bonus_x, cherry_bonus_y)
+    collision_cherry_bonus = cherry_bonus_collision(bucket_x, bucket_y, cherry_bonus_x, cherry_bonus_y)
     if collision_cherry_bonus:
         score += 3
         print(score)
         cherry_bonus_x = random.randint(87, 737)
-        cherry_bonus_x = random.randint(166, 314)
+        cherry_bonus_y = random.randint(166, 314)
     
     # score
     scoretext = myfont.render("Score {0}".format(score), 1, (0,0,0))
